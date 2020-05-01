@@ -1,0 +1,69 @@
+# NGOFS notes
+
+### PORTS: Physical Oceanographic Real-Time System (PORTS)
+
+- Real-time data... aid navigation
+- NOS: develop numerical... predictions... short-term forecast..
+-- water levels, currents, salinity, temp
+- Lead to development of NGOFS
+
+### NGOFS:
+
+Based on FVCOM, characterized by
+- 3D
+- Unstructured grid
+- Free-surface primitive
+
+- A great example of FVCOM is NECOFS,
+  providing real-time data since 2007
+
+Chosen since it handles:
+- meso-scale eddies
+- wind-based coastal circulation
+- smaller scale coast/estuarine circ..
+-- based on shorelines, topography, tides, freshwater input
+
+Provides
+- 2-day forecast
+- ... but low res
+
+
+### NWGOFS, NEGOFS
+
+- higher resolution in key inshore regions
+-- bays, coastal waterways
+-- these show high spatial/temporal variability
+- These models are __nested__ in NGOFS
+
+Some NWGOFS stats (as of paper date)
+-- For 'node' and 'element' definitions, _mesh_ literature
+- Num nodes: 84653
+- Num (triangular) elements: 160,444
+- Element size: 60m - 3.5 km
+- Rivers: 22
+
+Shoreline data: NOAA National Geophysical Data Center (NGDC) high0res coastline database
+
+Model hindcast
+- starts at Sept. 14, 2010  00:00:00
+- Takes ~7 days for salinity, temp to reach equilibrium
+- Sim results are compared to stations for model verification
+- __Examples exist of model underestimating peak tidal current speed_
+- Paper has table of RMS error for each station... could use for game-theory uncertainty?
+
+Nesting approach
+- One-way coupling with NGOFS
+-- 1. NGOFS run --> surface elev., 3D velocities, temp, salinity at _nesting boundary nodes & elems_
+-- 2. Nested model runs, using the NGOFS boundaries + atmos. surface forcing + river forcing
+
+
+Ouptuts:
+- NGOFS: Sigma levels (41): resolve vertical structures
+- N(W|E)GOFS: both (41) and (21) tested... evaluate effect of # of layers -> insignif. difference
+- --> N(W|E)GOFS uses 21 levels.
+
+#### Forecast
+
+- Types:
+-- Point ("forecast"):
+-- Gridded ("regulargrid"):
