@@ -29,7 +29,7 @@ def main():
                       default = False)
     parser.add_option("-b", "--bounds",
                       help = "Comma-delimited spatial bounds for region raster i.e. 'lon_min,lon_max,lat_min,lat_max'",
-                      default = "-70.97, -70.82, 42.25, 42.35")
+                      default = "-70.97,-70.82,42.25,42.35")
     parser.add_option("-r", "--rows",
                       help = "Number of rows of target raster",
                       default = 1000)
@@ -56,6 +56,8 @@ def main():
     startTimeIn = options.start
     outFilePlot = options.plot
     outFileRasterPre = options.geotiff_prefix
+
+    print(ncUrl)
 
     nc = netCDF4.Dataset(ncUrl)
     ncVars = nc.variables
@@ -213,17 +215,17 @@ def main():
 
         u_ds = rasterio.open(uOutFileRaster, 'w', driver = "GTiff", height = outDims[0], width = outDims[1],
                              count = len(idxs), dtype = str(uout.dtype), crs = crs, transform = transform)
-        u_ds.write(np.rollaxis(uout, axis = len(idxs) - 1))
+        u_ds.write(np.rollaxis(uout, axis = 2))
         u_ds.close()
 
         v_ds = rasterio.open(vOutFileRaster, 'w', driver = "GTiff", height = outDims[0], width = outDims[1],
                              count = len(idxs), dtype = str(vout.dtype), crs = crs, transform = transform)
-        v_ds.write(np.rollaxis(vout, axis = len(idxs) - 1))
+        v_ds.write(np.rollaxis(vout, axis = 2))
         v_ds.close()
 
         s_ds = rasterio.open(sOutFileRaster, 'w', driver = "GTiff", height = outDims[0], width = outDims[1],
                              count = len(idxs), dtype = str(sout.dtype), crs = crs, transform = transform)
-        s_ds.write(np.rollaxis(sout, axis = len(idxs) - 1))
+        s_ds.write(np.rollaxis(sout, axis = 2))
         s_ds.close()
 
 if __name__ == '__main__':
