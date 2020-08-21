@@ -8,6 +8,9 @@ This repo contains utilities for accessing online water surface data and convert
 
 When the option is selected, the utilities produce plots as well as rasters, which make it easier to quickly visualize the content of multi-band rasters. A figure is produced for every discrete time band, so it may produce a great number of figures. 
 
+I learned how to work with NetCDF data from a [Jupyter notebook by Rich Signell](http://rsignell-usgs.github.io/blog/blog/2014/01/08/fvcom/).
+Some of the code for accessing variables and plotting are directly lifted. 
+
 ## Data sources
 
 The repo is organized with a folder per data source, with scripts inside for accessing data from that source. 
