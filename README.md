@@ -60,7 +60,7 @@ Plot of first hour:
                             Prefix of file paths to store output rasters
       -p PLOT, --plot=PLOT  File path to save plot.
 
-#### [Northern Gulf of Mexico Operational Forecast System (NGOFS)](Northern Gulf of Mexico Operational Forecast System (NGOFS)
+#### [Northern Gulf of Mexico Operational Forecast System (NGOFS)](https://tidesandcurrents.noaa.gov/ofs/ngofs/ngofs.html)
 
 **Data extracted**
 
