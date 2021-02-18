@@ -6,6 +6,7 @@ from optparse import OptionParser
 from scipy.interpolate import griddata
 from osgeo import gdal, ogr, osr, gdalconst
 import rasterio
+import pyproj
 
 # Converts a NECOFS NetCDF data product to rasters
 # Where each raster holds data from one variable (i.e. water velocity u component)
@@ -206,7 +207,15 @@ def main():
 
         # CRS source: http://easterndivision.s3.amazonaws.com/Marine/MooreGrant/5_SMAST_SASI_Oceanograhic_variability.pdf
         crs = "+proj=utm +zone=19 +ellps=GRS80 +datum=NAD83 +units=m +no_defs"
-        transform = rasterio.transform.from_bounds(bounds[0], bounds[2], bounds[1], bounds[3], outDims[1], outDims[0])
+
+        p = pyproj.Proj(crs)
+        p1 = (bounds[0], bounds[2])
+        p2 = (bounds[1], bounds[3])
+        x1, y1 = p(p1[0], p1[1])
+        x2, y2 = p(p2[0], p2[1])
+
+        transform = rasterio.transform.from_bounds(x1, y1, x2, y2, outDims[1], outDims[0])
+
 
         h_ds = rasterio.open(hOutFileRaster, 'w', driver = "GTiff", height = outDims[0], width = outDims[1],
                              count = 1, dtype = str(hout.dtype), crs = crs, transform = transform)
