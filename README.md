@@ -30,7 +30,8 @@ The repo is organized with a folder per data source, with scripts inside for acc
     python3 NECOFS/necofs2raster.py \
         --nc http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc \
         --bounds -70.97,-70.82,42.25,42.35 \
-        --rows 1000 --cols 1500 \
+        --rows 1134 \
+        --cols 1259 \
         --times 2 \
         --geotiff_prefix test \
         --plot test.png
