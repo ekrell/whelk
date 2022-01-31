@@ -38,6 +38,25 @@ The repo is organized with a folder per data source, with scripts inside for acc
         --geotiff_prefix NECOFS/sample_output/sample \
         --plot NECOFS/sample_output/sample.png
 
+Sample output:
+
+    http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc
+    NetCDF: NECOFS Massachusetts (FVCOM) - Massachusetts Coastal - Latest Forecast 
+    ------------------
+    URL: http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc
+    Duration: 2022-01-27 00:00:00 ---- 2022-02-02 00:00:00
+    Keys:
+    odict_keys(['x', 'y', 'lon', 'lat', 'xc', 'yc', 'lonc', 'latc', 'siglay',
+    'h', 'nv', 'time', 'Times', 'zeta', 'nbe', 'aw0', 'awx', 'awy', 'u', 'v', 'ww', 'ua', 'va', 'temp', 'salinity', 'fvcom_mesh'])
+
+    Output rasters:
+    Rows: 1134, columns: 1259, bands: 2
+    Desired start time: 2022-01-31 13:53:10.285240)
+    Desired number of hourly bands: 2
+    Forecast band times:
+        [0] 2022-Jan-31 13:58
+        [1] 2022-Jan-31 15:00 
+
 Plot of first hour:
 
 ![NECOFS example plot](images/NECOFS.png)
