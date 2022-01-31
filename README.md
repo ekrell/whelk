@@ -35,8 +35,8 @@ The repo is organized with a folder per data source, with scripts inside for acc
         --rows 1134 \
         --cols 1259 \
         --times 2 \
-        --geotiff_prefix test \
-        --plot test.png
+        --geotiff_prefix NECOFS/sample_output/sample \
+        --plot NECOFS/sample_output/sample.png
 
 Plot of first hour:
 
