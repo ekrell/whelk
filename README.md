@@ -17,6 +17,8 @@ The repo is organized with a folder per data source, with scripts inside for acc
 
 #### [The Northeast Coastal Ocean Forecast System (NECOFS)](http://fvcom.smast.umassd.edu/necofs/)
 
+[Directory](NECOFS/)
+
 **Data extracted**
 
 - Height (height, width) - meters
