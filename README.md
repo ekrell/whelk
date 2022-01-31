@@ -87,6 +87,8 @@ Plot of first hour:
 
 #### [Northern Gulf of Mexico Operational Forecast System (NGOFS)](https://tidesandcurrents.noaa.gov/ofs/ngofs/ngofs.html)
 
+**WORK IN PROGRES --- JUST A HARD CODED DEMO!!!!**
+
 **Data extracted**
 
 - Water current u component (height, width, hour) - meters/second
