@@ -28,10 +28,12 @@ The repo is organized with a folder per data source, with scripts inside for acc
 
 **Example**
 
+        --bounds -70.97,-70.82,42.25,42.35 \
+
     # Get Boston Harbor forecasts from right now to the next two hours
     python3 NECOFS/necofs2raster.py \
         --nc http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc \
-        --bounds -70.97,-70.82,42.25,42.35 \
+        --bounds -71.0192787,-70.8513873,42.2495029,42.4008038 \
         --rows 1134 \
         --cols 1259 \
         --times 2 \
@@ -41,25 +43,26 @@ The repo is organized with a folder per data source, with scripts inside for acc
 Sample output:
 
     http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc
-    NetCDF: NECOFS Massachusetts (FVCOM) - Massachusetts Coastal - Latest Forecast 
+    NetCDF: NECOFS Massachusetts (FVCOM) - Massachusetts Coastal - Latest Forecast
     ------------------
     URL: http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc
     Duration: 2022-01-27 00:00:00 ---- 2022-02-02 00:00:00
     Keys:
     odict_keys(['x', 'y', 'lon', 'lat', 'xc', 'yc', 'lonc', 'latc', 'siglay',
-    'h', 'nv', 'time', 'Times', 'zeta', 'nbe', 'aw0', 'awx', 'awy', 'u', 'v', 'ww', 'ua', 'va', 'temp', 'salinity', 'fvcom_mesh'])
+    'h', 'nv', 'time', 'Times', 'zeta', 'nbe', 'aw0', 'awx', 'awy', 'u', 'v'
+    'ww', 'ua', 'va', 'temp', 'salinity', 'fvcom_mesh'])
 
     Output rasters:
-    Rows: 1134, columns: 1259, bands: 2
-    Desired start time: 2022-01-31 13:53:10.285240)
+    Rows: 1134, columns: 1259, bands: 2 
+    Desired start time: 2022-01-31 14:52:24.371606)
     Desired number of hourly bands: 2
     Forecast band times:
-        [0] 2022-Jan-31 13:58
-        [1] 2022-Jan-31 15:00 
+        [0] 2022-Jan-31 15:00
+            [1] 2022-Jan-31 16:0
 
 Plot of first hour:
 
-![NECOFS example plot](images/NECOFS.png)
+![NECOFS example plot](NECOFS/figure.png)
 
 **Options**
 
