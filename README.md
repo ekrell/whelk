@@ -103,7 +103,7 @@ Plot of first hour:
 
 COMING SOON! This has three separate scripts, but all are hard-coded!
 
-![NGOFS example plot](images/NGOFS.png)
+![NGOFS example plot](NGOFS/figure.png)
 
 **Options**
 
