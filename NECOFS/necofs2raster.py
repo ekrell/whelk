@@ -128,7 +128,7 @@ def main():
     xx, yy = np.mgrid[bounds[0]:bounds[1]:complex(0, outDims[1]), bounds[3]:bounds[2]:complex(0, outDims[0])]
 
     # Init plot
-    fig, axs = plt.subplots(len(idxs), 2, figsize=(20, 6 * len(idxs)))
+    fig, axs = plt.subplots(len(idxs), 2, figsize=(20, 6 * len(idxs)), squeeze=0)
     axs[0][1].set_title("Salinity (ppt)", y = 1.08, fontsize = 10)
     axs[0][0].set_title("Depth (meters)", y = 1.08, fontsize = 10)
 
