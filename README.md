@@ -28,8 +28,6 @@ The repo is organized with a folder per data source, with scripts inside for acc
 
 **Example**
 
-        --bounds -70.97,-70.82,42.25,42.35 \
-
     # Get Boston Harbor forecasts from right now to the next two hours
     python3 NECOFS/necofs2raster.py \
         --nc http://www.smast.umassd.edu:8080/thredds/dodsC/FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc \
